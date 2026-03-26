@@ -30,8 +30,8 @@ parser = StrOutputParser()
 
 chain = prompt_template | model | parser
 
-resulit = chain.invoke({"language": "china", "text": "i will be rich man"})
+result = chain.invoke({"language": "china", "text": "i will be rich man"})
 
-print(resulit)
+print(result)
 
 
