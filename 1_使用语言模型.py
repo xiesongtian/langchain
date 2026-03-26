@@ -2,6 +2,10 @@ import os
 from dotenv import load_dotenv
 from langchain.schema import HumanMessage, SystemMessage
 from langchain_deepseek.chat_models import ChatDeepSeek
+from langchain_core.output_parsers import StrOutputParser
+parser = StrOutputParser()
+
+
 
 # 加载当前目录下的 .env 文件
 load_dotenv()  # 默认查找当前目录的 .env 文件
@@ -24,5 +28,13 @@ llm = ChatDeepSeek(
     api_key=deepseek_api_key
 )
 
-response = llm.invoke(messages)
-print(response.content)
+# response = llm.invoke(messages)
+# print(response.content)
+
+# result = llm.invoke(messages)
+# print(parser.invoke(result))
+
+chain = llm | parser
+result = chain.invoke(messages)
+print(result)
+
