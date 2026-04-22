@@ -7,9 +7,9 @@ from langserve import add_routes
 from dotenv import load_dotenv
 import os
 
-os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_API_KEY"] = ""
-os.environ["LANGCHAIN_PROJECT"] = "my-llm-project"
+# os.environ["LANGCHAIN_TRACING_V2"] = "true"
+# os.environ["LANGCHAIN_API_KEY"] = ""
+# os.environ["LANGCHAIN_PROJECT"] = "my-llm-project"
 
 # 加载当前目录下的 .env 文件
 load_dotenv()  # 默认查找当前目录的 .env 文件
